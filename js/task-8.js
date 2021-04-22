@@ -15,12 +15,9 @@ function getRandomInt(max) {
 }
 
 const createBoxes = (amount) => {
-  console.log(amount)
   for (let i = 0; i < amount; i++) {
     array[i] = document.createElement('div')
     boxes.appendChild(array[i])
-
-    console.log(array)
     array[i].style.width = width + 'px'
     array[i].style.height = height + 'px'
     array[i].style.background =
@@ -36,10 +33,16 @@ const createBoxes = (amount) => {
   }
 }
 
-const destroyBoxes = () => {}
+const createBoxesNew = () => {
+  createBoxes(parseInt(numberInput.value, 10))
+}
+const destroyBoxes = () => {
+  array.length = 0
+  width = 30
+  height = 30
+  const divs = boxes.querySelectorAll('div')
+  divs.forEach((el) => boxes.removeChild(el))
+}
 
-createBtn.addEventListener(
-  'click',
-  createBoxes(parseInt(numberInput.value, 10)),
-)
-deleteBtn.addEventListener('click', destroyBoxes())
+createBtn.addEventListener('click', createBoxesNew)
+deleteBtn.addEventListener('click', destroyBoxes)
