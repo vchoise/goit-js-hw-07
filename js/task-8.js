@@ -28,8 +28,8 @@ const createBoxes = (amount) => {
       ', ' +
       getRandomInt(255) +
       ')'
-    width += 30
-    height += 30
+    width += 10
+    height += 10
   }
 }
 
