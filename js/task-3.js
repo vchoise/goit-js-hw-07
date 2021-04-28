@@ -21,13 +21,8 @@ const images = [
 
 const imagesById = document.querySelector('#gallery')
 
-const imagesString = []
+const imagesString = images.map(({url, alt}) => `<li><img src='${url}' alt='${alt}'></li>`)
 
-for (let i = 0; i < images.length; i++) {
-  imagesString[
-    i
-  ] = `'<li><img src='${images[i].url}' alt='${images[i].alt}'></li>'`
-}
 
 imagesString.forEach((image) => {
   imagesById.insertAdjacentHTML('beforeend', image)
