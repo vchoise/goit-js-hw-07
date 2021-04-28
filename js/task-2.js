@@ -18,3 +18,6 @@ for (let i = 0; i < ingredients.length; i++) {
 }
 
 elements.forEach((el) => ingredient.appendChild(el))
+
+
+//
